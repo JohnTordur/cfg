@@ -122,10 +122,14 @@ config config status.showUntrackedFiles no
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+if [[ -f /home/john/.config/broot/launcher/bash/br ]]
+then	
 source /home/john/.config/broot/launcher/bash/br
+fi
 # Only define alias if the environment.sh exists:
 BENV_PATH=~/home/john/Source/git.swarco.com/rs/build_env_19_build_environment_prebuilt/
 if [[ -f "${BENV_PATH}/environment.sh" ]]
+then
   alias source_benv="source ${BENV_PATH}/environment.sh"
 fi
 
