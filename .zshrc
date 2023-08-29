@@ -87,7 +87,11 @@ autoenv
 ssh-agent
 )
 # Source ssh keys:
-zstyle :omz:plugins:ssh-agent identities id_rsa
+# Check if user is vscode, disable this:
+if [[ $USER != "vscode" ]]; then
+	zstyle :omz:plugins:ssh-agent identities id_rsa
+	zstyle :omz:plugins:ssh-agent agent-forwarding yes
+fi
 
 source $ZSH/oh-my-zsh.sh
 
